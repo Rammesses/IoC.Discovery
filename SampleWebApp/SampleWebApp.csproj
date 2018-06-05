@@ -12,4 +12,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CheviotConsulting.DependencyInjection.Discovery\CheviotConsulting.DependencyInjection.Discovery.csproj" />
+    <ProjectReference Include="..\SampleServices\SampleServices.csproj" />
+  </ItemGroup>
+
 </Project>

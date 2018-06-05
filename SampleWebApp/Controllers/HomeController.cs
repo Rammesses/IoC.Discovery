@@ -4,12 +4,22 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SampleServices;
 using SampleWebApp.Models;
 
 namespace SampleWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly MyCustomService customService;
+        private readonly IWebAppService webAppService;
+
+        public HomeController(MyCustomService customService, IWebAppService webAppService)
+        {
+            this.customService = customService;
+            this.webAppService = webAppService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -17,7 +27,9 @@ namespace SampleWebApp.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = $"{customService.GetType()}.{customService.GetHashCode()} " +
+                                  $"/ {webAppService.GetType()}.{webAppService.GetHashCode()} - " +
+                                  $"{customService.GetMessage()}";
 
             return View();
         }
