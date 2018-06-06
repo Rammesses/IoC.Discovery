@@ -7,6 +7,9 @@
     <Authors>Joel Hammond-Turner</Authors>
     <Description>Simple MEF-based discovery for ASP.Net Core Service bootstrapping</Description>
     <Copyright>(c) Cheviot Consulting</Copyright>
+    <Version>0.5.0</Version>
+    <PackageProjectUrl>https://github.com/Rammesses/IoC.Discovery</PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
