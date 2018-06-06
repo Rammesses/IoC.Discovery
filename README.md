@@ -1,6 +1,8 @@
 # IoC.Discovery
 MEF-based discovery library for **ASPNet Core** / `Microsoft.Extensions.DependencyInjection`.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/gnho4upnm0ux7hhf/branch/master?svg=true)](https://ci.appveyor.com/project/Rammesses/ioc-discovery/branch/master)
+
 ## Introduction
 
 The problem with all DI systems is that configuration generally is pulled in two polar-opposite directions. Either your container is configured by convention (with a few rare exception cases), or it's configured directly and declaratively with *masses* of registrations.
