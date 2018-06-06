@@ -20,8 +20,15 @@ namespace SampleWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // This is from the boilerplate
             services.AddMvc();
+
+            // Bootstrap services using "magic" discovery
             services.BootstrapByDiscovery();
+
+            // Bootstrap services manually
+            services.BootstrapFrom<SampleServicesBootstrapper>();
+            services.BootstrapFrom(new WebAppServiceBootstrapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

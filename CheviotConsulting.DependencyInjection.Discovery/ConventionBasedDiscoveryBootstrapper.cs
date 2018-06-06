@@ -20,7 +20,8 @@ namespace Microsoft.Extensions.DependencyInjection.Discovery
             var referencedAssemblies = baseAssembly.GetReferencedAssemblies().Select(n => Assembly.Load(n));
             var configuration = new ContainerConfiguration()
                 .WithAssembly(baseAssembly, conventions)
-                .WithAssemblies(referencedAssemblies, conventions);
+                .WithAssemblies(referencedAssemblies, conventions)
+                .WithExistingServices(services);
 
             IEnumerable<IServiceDiscoveryBootstrapper> discoveredBootstrappers = null;
             using (var container = configuration.CreateContainer())
